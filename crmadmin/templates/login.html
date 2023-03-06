@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>login page</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+	<script type="text/javascript">
+		function mypasswd()
+		{
+			var x=document.getElementById('pass');
+			if(x.type==="password")
+			{
+				x.type="text";
+			}
+			else
+			{
+				x.type="password"
+			}
+		}
+	</script>
+</head>
+<body>
+<div class="container mx-auto place-items-center md:w-[440px] md:h-[600]px mt-32">
+	<div class="md:grid place-items-center md:p-10 shadow-2xl">
+		<img src="/static/images/logo.png" alt="" class="w-[200px] h-10">
+		<h1 class="md:text-xl text-gray-400 md:mt-8">Please sign-in to your account and start the adventure</h1>
+		<form action="/crmadmin/admin" method="post">
+			{% csrf_token %}
+			<h1 class="md:text-lg text-gray-400 mb-2 mt-10" required>EMAIL ID</h1>
+			<input type="md:text-lg" name="email" id="email" placeholder="Enter your email id" class="md:w-[360px] p-4 h-10 text-gray-400 hover:border-2 rounded-md hover:border-gray-700 border-2 border-gray-700">
+			<div class="flex">
+				<h1 class="md:text-lg md:mt-6 md:mb-2 text-gray-400" required>PASSWORD</h1>
+				<h1 class="md:text-lg md:mt-4 mb-2 md:ml-auto text-gray-400">Forget password?</h1>
+			</div>
+			<div>
+			    <input type="password" name="pass" id="pass" placeholder=".........." class="md:w-[360px] h-10 text-gray-400 p-4 hover:border-2 rounded-md hover:border-gray-700 border-2 border-gray-700">
+			    <i class="fa fa-eye absolute ml-auto text-xl -ml-10 mt-1 cursor-pointer" onclick="mypasswd()"></i>
+		    </div>
+		    <input type="checkbox" class="md:w-6 md:h-4 md:mt-8"> Remember Me<br>
+		    <input type="submit" value="Sign in" class="bg-blue-900 rounded-lg font-bold text-white mt-10 shadow-xl text-center md:w-[360px] h-10">
+		</form>
+	</div>
+</div>
+</body>
+</html>

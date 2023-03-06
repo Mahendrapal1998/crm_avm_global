@@ -1,0 +1,300 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <!-- dataTable style cdn -->
+    <style type="text/css" src="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css"></style>
+    <!-- jquery cdn -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- database cdn -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <!-- initializing database -->
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#meetings').DataTable();
+    });
+    function dropdown()
+    {
+        document.getElementById('dropdown').classList.toggle('hidden')
+        document.getElementById('arrow').classList.toggle('rotate-0')
+    }
+    function dropdown2()
+    {
+        document.getElementById('dropdown2').classList.toggle('hidden')
+        document.getElementById('arrow2').classList.toggle('rotate-0')
+    }
+    function dropdown3()
+    {
+        document.getElementById('dropdown3').classList.toggle('hidden')
+        document.getElementById('arrow3').classList.toggle('rotate-0')
+    }
+    function dropdown4()
+    {
+        document.getElementById('dropdown4').classList.toggle('hidden')
+        document.getElementById('arrow4').classList.toggle('rotate-0')
+    }
+    function handlemenu()
+    {
+        document.getElementById('togglemenu').classList.toggle('hidden')
+    }
+    </script>
+    <style>
+        .darkmode{
+            background-color: black;
+            color: white;
+        }
+        .lightmode{
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body class="dark">
+    <div class="flex bg-blue-900 flex-wrap h-screen md:grid-cols-1 lg:grid-cols-2">
+        <div class="w-56 lg:w-72 duration-75 h-screen overflow-auto" id="togglemenu">
+            <div class="px-3 py-4 rounded">
+                <img src="/static/images/logoicon.png" class="absolute w-10 h-10">
+                <h1 class="font-semibold text-white ml-[60px] mt-1 text-xl absolute">AVM GLOBAL</h1>
+                <br><br>
+                <ul>
+                    <li>
+                        <a href="/crmadmin/admin" class="flex items-center p-2 hover:text-[black] text-white rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <i class="fas fa-home mr-4"></i>
+                            <span class="ml-3">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/crmadmin/leads" class="flex items-center p-2 text-white hover:text-[black] rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
+                            <i class="fas fa-users mr-4"></i>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Leads</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 text-white hover:text-[black] rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <i class="fas fa-users mr-4"></i>
+                            <button type="button" class="flex items-center w-full duration-75 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" 
+                            onclick="dropdown()">
+                                <span class="flex-1 ml-3 text-left">Clients</span>
+                                <span class="rotate-180" id="arrow">
+                                    <i class="fa fa-chevron-down"></i>
+                                </span>
+                            </button>
+                            <ul id="dropdown" class="hidden space-y-2">
+                                <li>
+                                    <a href="#"
+                                    class="flex items-center w-full p-2 text-gray-300 hover:text-gray-900 duration-75 rounded-lg pl-11 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Admissions</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                    class="flex items-center w-full p-2 text-gray-300  hover:text-gray-900 duration-75 rounded-lg pl-11 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Migrations</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                    class="flex items-center w-full p-2 text-gray-300  hover:text-gray-900 duration-75 rounded-lg pl-11 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Consultancy</a>
+                                </li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/crmadmin/institute" class="flex items-center p-2 text-white hover:text-[black] rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
+                            <i class="fas fa-users mr-4"></i>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Institutes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/crmadmin/courses" class="flex items-center p-2 text-white hover:text-[black] rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
+                            <i class="fas fa-users mr-4"></i>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Courses</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/crmadmin/user" class="flex items-center p-2 text-white hover:text-[black] rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
+                            <i class="fas fa-users mr-4"></i>
+                            <span class="flex-1 ml-3 whitespace-nowrap">User</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 text-white hover:text-[black] rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <i class="fas fa-users mr-4"></i>
+                            <button type="button" class="flex items-center w-full duration-75 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" 
+                            onclick="dropdown2()">
+                                <span class="flex-1 ml-3 text-left">Accounts</span>
+                                <span class="rotate-180" id="arrow2">
+                                    <i class="fa fa-chevron-down"></i>
+                                </span>
+                            </button>
+                            <ul id="dropdown2" class="hidden space-y-2">
+                                <li>
+                                    <a href="#"
+                                    class="flex items-center w-full p-2 text-gray-300 hover:text-gray-900 duration-75 rounded-lg pl-11 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Leads</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                    class="flex items-center w-full p-2 text-gray-300  hover:text-gray-900 duration-75 rounded-lg pl-11 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Admissions</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                    class="flex items-center w-full p-2 text-gray-300  hover:text-gray-900 duration-75 rounded-lg pl-11 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Migrations</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                    class="flex items-center w-full p-2 text-gray-300  hover:text-gray-900 duration-75 rounded-lg pl-11 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Consultancy</a>
+                                </li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/crmadmin/task" class="flex items-center p-2 text-white hover:text-[black] rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
+                            <i class="fas fa-tasks mr-4"></i>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Tasks</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 text-white hover:text-[black] rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
+                            <i class="fas fa-users mr-4"></i>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Meetings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/crmadmin/products" class="flex items-center p-2 text-white hover:text-[black] rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
+                            <i class="fas fa-users mr-4"></i>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Products</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 text-white hover:text-[black] rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <i class="fas fa-users mr-4"></i>
+                            <button type="button" class="flex items-center w-full duration-75 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" 
+                            onclick="dropdown3()">
+                                <span class="flex-1 ml-3 text-left">Quotes</span>
+                                <span class="rotate-180" id="arrow3">
+                                    <i class="fa fa-chevron-down"></i>
+                                </span>
+                            </button>
+                            <ul id="dropdown3" class="hidden space-y-2">
+                                <li>
+                                    <a href="#"
+                                    class="flex items-center w-full p-2 text-gray-300 hover:text-gray-900 duration-75 rounded-lg pl-11 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Leads</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                    class="flex items-center w-full p-2 text-gray-300  hover:text-gray-900 duration-75 rounded-lg pl-11 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Admissions</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                    class="flex items-center w-full p-2 text-gray-300  hover:text-gray-900 duration-75 rounded-lg pl-11 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Migrations</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                    class="flex items-center w-full p-2 text-gray-300  hover:text-gray-900 duration-75 rounded-lg pl-11 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Consultancy</a>
+                                </li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center p-2 text-white hover:text-[black] rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <i class="fas fa-users mr-4"></i>
+                            <button type="button" class="flex items-center w-full duration-75 rounded-lg hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" 
+                            onclick="dropdown4()">
+                                <span class="flex-1 ml-3 text-left">Invoice</span>
+                                <span class="rotate-180" id="arrow4">
+                                    <i class="fa fa-chevron-down"></i>
+                                </span>
+                            </button>
+                            <ul id="dropdown4" class="hidden space-y-2">
+                                <li>
+                                    <a href="#"
+                                    class="flex items-center w-full p-2 text-gray-300 hover:text-gray-900 duration-75 rounded-lg pl-11 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Leads</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                    class="flex items-center w-full p-2 text-gray-300  hover:text-gray-900 duration-75 rounded-lg pl-11 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Admissions</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                    class="flex items-center w-full p-2 text-gray-300  hover:text-gray-900 duration-75 rounded-lg pl-11 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Migrations</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                    class="flex items-center w-full p-2 text-gray-300  hover:text-gray-900 duration-75 rounded-lg pl-11 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Consultancy</a>
+                                </li>
+                            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/crmadmin/newsletter" class="flex items-center p-2 text-white hover:text-[black] rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
+                            <i class="fas fa-users mr-4"></i>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Newsletter</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="text-2xl font-semibold flex-1 h-screen overflow-auto bg-[#f9fbfe]">
+          <nav class="px-2 sm:px-4 dark:bg-gray-900 lg:w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600 relative">
+            <div class="container flex flex-wrap items-center justify-between mx-auto fixed bg-white">
+              <button onclick="handlemenu()" id="menubutton">
+                <a href="#" class="flex items-center">
+                  <i class="fas fa-bars text-[#324253]"></i>
+                </a>
+              </button>
+              <div class="flex mr-36">
+                <div class="lg:flex md:flex-row lg:flex-wrap boder-[#0c2556] p-1.5 grid lg:grid-cols-4 md:grid-cols-1">
+                  <button onclick="lightmode()" class="cursor-pointer">
+                    <span class="bg-[#0c2556] border-2">
+                      <i class="fas fa-sun text-white text-center text-6 px-2 pt-[9px]"></i>
+                    </span>
+                  </button>
+                  <button onclick="darkmode()" class="cursor-pointer">
+                    <span class="border-2">
+                      <i class="fas fa-moon text-[#0c2556] text-center text-6 px-2 pt-[9px]"></i>
+                    </span>
+                  </button>
+                  <div>
+                    <i class="fas fa-bell text-black text-center mt-1 text-20 p-1 lg:ml-5"></i>
+                  </div>
+                  <div class="w-[50px] h-[50px] lg:ml-5">
+                    <img src="/static/images/logoicon.png">
+                  </div>
+                  <div class="w-[45px] h-[45px] lg:ml-5 text-[#324253] text-[20px]">
+                    <h1>AVM</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+		 <div class="flex gap-1">
+            <div class="shadow-2xl p-12 mb-24 w-3/4 ml-32 mt-32 text-[15px] ml-2">
+                  <h1 class="font-bold text-2xl">All Meetings</h1><br>
+                  <table id="meetings" class="display" style="width:100%">
+                      <thead>
+                          <tr>
+                              <th>Title</th>
+                              <th>From</th>
+                              <th>To</th>
+                              <th>Location</th>
+                          </tr>
+                      </thead>
+                      <tbody class="text-center">
+                          {% for i in meetings %}
+                          <tr>
+                              <td>{{i.title}}</td>
+                              <td>{{i.date_now}}</td>
+                              <td>{{i.date_now}}</td>
+                              <td>{{i.location}}</td>
+                              <td><i class="fa-sharp fa-solid fa-eye"></i>&nbsp;&nbsp;<i class="fa-solid fa-pen"></i></td>
+                          </tr>
+                          {% endfor %}
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
